@@ -1,0 +1,18 @@
+<h1>Hello</h1>
+
+<li *ngFor='let task of tasks'>
+  {{ task | json }} <button (click)="deleteTask(task._id)">Delete</button>
+</li>
+
+<form (submit)='createTask(taskCreateForm)' #taskCreateForm='ngForm'>
+  <input type='text' name='title' ngModel >
+  <input type='text' name='description' ngModel >
+  <input type='submit'>
+</form>
+
+<!-- 
+<form (submit)='updateTask(taskUpdateForm)' #taskUpdateForm='ngForm'>
+  <input type='text' name='title' [(ngModel)]="task.title" >
+  <input type='text' name='description' [(ngModel)]="task.description" >
+  <input type='submit'>
+</form> -->
